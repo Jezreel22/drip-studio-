@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bone: #EFEDE8;
+  --color-ink: #101010;
+  --color-mid: #7a7872;
+  --color-line: rgba(16, 16, 16, 0.12);
+  --color-nav-bg: rgba(239, 237, 232, 0.9);
+  
+  --font-sans: var(--font-archivo), Archivo, system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bone: #EFEDE8;
+  --ink: #101010;
+  --mid: #7a7872;
+  --line: rgba(16, 16, 16, 0.12);
+  --nav-height: 96px;
+}
+
+html {
+  background-color: var(--bone);
+  color: var(--ink);
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* SABLE Grayscale & Contrast utility presets */
+.img-sable-hero {
+  filter: grayscale(1) contrast(1.05);
+}
+
+.img-sable-cat {
+  filter: grayscale(1) contrast(1.06);
+}
+
+.img-sable-season {
+  filter: grayscale(1) contrast(1.04);
+}
+
+.img-sable-card {
+  filter: grayscale(1) contrast(1.07);
+}
+
+.img-sable-look {
+  filter: grayscale(1) contrast(1.05);
+}
+
+.img-sable-cloth {
+  filter: grayscale(1) contrast(1.08);
+}
+
+.img-sable-atelier {
+  filter: grayscale(1) contrast(1.06);
+}
+
+/* Scroll reveal helper classes */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
